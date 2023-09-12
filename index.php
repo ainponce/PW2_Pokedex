@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <form action="procesarLogin.php" method="POST">
+    <form action="scripts/loginProcesar.php" method="POST">
         <div class="containerLogin">
             <h2>Iniciar Sesión</h2>
             <label for="usuario">Usuario:</label>
