@@ -2,6 +2,7 @@ body {
     background-image: url("../assets/pokemon.webp");
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
 }
 
 .containerLogin {
@@ -17,3 +18,31 @@ body {
     align-items: center;
 }
 
+.pokemon-detalle {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.pokemon-nombre {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.pokemon-tipo {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.pokemon-imagen {
+    max-width: 100%;
+}
+
+.pokemon-descripcion {
+    margin-top: 20px;
+    font-size: 16px;
+}
