@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($res->num_rows == 1) {
         $_SESSION["usuario"] = $correo;
+        $_SESSION["roleID"] = $res->fetch_assoc()["roleID"];
         header("location: ../home.php");
     } else {
         echo "Usuario o contraseña incorrectos. <a href='../index.php'>Volver a intentar</a>";

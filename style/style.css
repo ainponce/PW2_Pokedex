@@ -50,38 +50,23 @@
     background-color: #d32f2f;
 }
 
-@media (max-width: 768px) {
-    body {
-        background-image: url("../assets/background-mobile.jpg");
-    }
+/* Home */
 
-    .containerLogin {
-        width: 80%;
-    }
-
-    .containerLogin h2 {
-        font-size: 1.5em;
-    }
-
-    .containerLogin input {
-        width: 100%;
-    }
-
-    .containerLogin input[type="submit"] {
-        font-size: 1em;
-    }
-
-    .containerLogin input[type="submit"]:hover {
-        background-color: #d32f2f;
-    }
-
-    .containerLogin label {
-        font-size: 1em;
-    }
+.pokelogo{
+    width: 5%;
+    height: 5%;
+    margin: 0 auto;
+    display: block;
 }
 
+.btn-danger {
+    border: 1px solid #f44336;
+    background-color: #f9f9f9;
+}
 
-/* Home */
+.nav-item{
+    text-decoration: underline;
+}
 
 .pokemon-detalle {
     border: 1px solid #ccc;
