@@ -14,6 +14,7 @@ $usuario = $_SESSION["usuario"];
     <title>Página de inicio</title>
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <link href="./assets/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -25,7 +26,7 @@ $usuario = $_SESSION["usuario"];
                 <?php
                 if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
                     echo '<li class="nav-item">';
-                    echo '<a class="nav-link active" aria-current="page" href="#">Editar Pokemones</a>';
+                    echo '<button class="btn btn-danger" type="button">Nuevo Pokemon<i class="bi bi-plus" style="margin-left: 5px"></i></button>';
                     echo '</li>';
                 }
                 ?>
@@ -75,6 +76,19 @@ $usuario = $_SESSION["usuario"];
 
                     echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
                 }
+
+                echo '<div class="d-flex justify-content-center m-2">';
+                echo '<form class="m-1" method="post" action="./scripts/editarPokemon.php">';
+                echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
+                echo '<button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i></button>';
+                echo '</form>';
+
+                echo '<form class="m-1" method="post" action="./scripts/borrarPokemon.php">';
+                echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
+                echo '<button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>';
+                echo '</form>';
+                echo '</div>';
+
 
                 echo '</div>';
                 echo '</div>';

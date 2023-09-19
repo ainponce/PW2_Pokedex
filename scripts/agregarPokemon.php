@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombrePokemon = $_POST["nombrePokemon"];
     $tipoPokemon = $_POST["tipoPokemon"];
 
-    $stmt =  $conexion->prepare("INSERT INTO `pokemons`(`id`,`nombre`,`tipo`) VALUES (?,?,?)");
+    $stmt =  $conexion->prepare("INSERT INTO `pokemons`(`id`,`nombre`,`imagen`,`altura`,`peso` ,`tipo`,`tipo2`) VALUES (?,?,?,?,?,?,?)");
     $stmt->bind_param('iss', $idPokemon,$nombrePokemon,$tipoPokemon);
     $stmt->execute();
     $resultado = $stmt->get_result();
