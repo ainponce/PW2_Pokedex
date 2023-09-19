@@ -1,4 +1,6 @@
-body {
+/* Login */
+
+.bodyLogin {
     background-image: url("../assets/pokemon.webp");
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,6 +19,69 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.containerLogin h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.containerLogin input {
+    width: 50%;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.containerLogin label {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.containerLogin input[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.containerLogin input[type="submit"]:hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url("../assets/background-mobile.jpg");
+    }
+
+    .containerLogin {
+        width: 80%;
+    }
+
+    .containerLogin h2 {
+        font-size: 1.5em;
+    }
+
+    .containerLogin input {
+        width: 100%;
+    }
+
+    .containerLogin input[type="submit"] {
+        font-size: 1em;
+    }
+
+    .containerLogin input[type="submit"]:hover {
+        background-color: #d32f2f;
+    }
+
+    .containerLogin label {
+        font-size: 1em;
+    }
+}
+
+
+/* Home */
 
 .pokemon-detalle {
     border: 1px solid #ccc;

@@ -12,6 +12,8 @@ $usuario = $_SESSION["usuario"];
 <html>
 <head>
     <title>Página de inicio</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link href="./assets/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
 <h2>Bienvenido, <?php echo $usuario; ?></h2>

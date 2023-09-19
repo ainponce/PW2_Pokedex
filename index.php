@@ -3,8 +3,9 @@
 <head>
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link href="./assets/favicon.ico" rel="icon" type="image/x-icon">
 </head>
-<body>
+<body class="bodyLogin">
 
     <form action="scripts/loginProcesar.php" method="POST">
         <div class="containerLogin">
