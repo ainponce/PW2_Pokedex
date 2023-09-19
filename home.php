@@ -77,18 +77,20 @@ $usuario = $_SESSION["usuario"];
                     echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
                 }
 
-                echo '<div class="d-flex justify-content-center m-2">';
-                echo '<form class="m-1" method="post" action="./scripts/editarPokemon.php">';
-                echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
-                echo '<button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i></button>';
-                echo '</form>';
 
-                echo '<form class="m-1" method="post" action="./scripts/borrarPokemon.php">';
-                echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
-                echo '<button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>';
-                echo '</form>';
-                echo '</div>';
+                if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
+                    echo '<div class="d-flex justify-content-center m-2">';
+                    echo '<form class="m-1" method="post" action="./scripts/editarPokemon.php">';
+                    echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
+                    echo '<button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i></button>';
+                    echo '</form>';
 
+                    echo '<form class="m-1" method="post" action="./scripts/borrarPokemon.php">';
+                    echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
+                    echo '<button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>';
+                    echo '</form>';
+                    echo '</div>';
+                }
 
                 echo '</div>';
                 echo '</div>';
