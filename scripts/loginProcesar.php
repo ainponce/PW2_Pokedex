@@ -6,15 +6,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST["usuario"];
     $contraseña = $_POST["contraseña"];
 
-    $consulta = "SELECT id FROM usuarios WHERE correo = '$correo' AND contraseña = '$contraseña'";
-    $resultado = $conexion->query($consulta);
+    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE correo=? AND contraseña=?");
+        $stmt->bind_param("ss", $correo,$contraseña);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $stmt->close();
 
-    if ($resultado->num_rows == 1) {
+    if ($res->num_rows == 1) {
         $_SESSION["usuario"] = $correo;
         header("location: ../home.php");
     } else {
-
-        echo "Usuario o contraseña incorrectos. <a href='login.php'>Volver a intentar</a>";
+        echo "Usuario o contraseña incorrectos. <a href='../index.php'>Volver a intentar</a>";
     }
 }
 
