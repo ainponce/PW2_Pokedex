@@ -63,7 +63,19 @@ $usuario = $_SESSION["usuario"];
                 echo '<p class="card-text">Nro: ' . $row["id"] . '</p>';
                 echo '<p class="card-text">Altura: ' . $row["altura"] . ' cm</p>';
                 echo '<p class="card-text">Peso: ' . $row["peso"] . ' kg</p>';
-                echo '<p class="card-text">Tipo: ' . $row["tipo_id"] . '</p>';
+
+                if (!empty($row["tipo2_id"])) {
+                    $tipo1_imagen = './assets/tipos/' . strtolower($row["tipo_id"]) . '.webp';
+                    $tipo2_imagen = './assets/tipos/' . strtolower($row["tipo2_id"]) . '.webp';
+
+                    echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
+                    echo '<img class="m-1 imagen-tipo" src="' . $tipo2_imagen . '" alt="' . $row["tipo2_id"] . '">';
+                } else {
+                    $tipo1_imagen = './assets/tipos/' . strtolower($row["tipo_id"]) . '.webp';
+
+                    echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
+                }
+
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -72,10 +84,9 @@ $usuario = $_SESSION["usuario"];
             echo "No se encontraron Pokémon.";
         }
 
-        // Cerrar la conexión
+
         $conexion->close();
         ?>
-    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

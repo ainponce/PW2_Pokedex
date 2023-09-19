@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="74fe75b9-b3a9-46dd-b7b7-d95662c0fe1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/agua.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
@@ -86,7 +85,7 @@
       <workItem from="1694560096173" duration="185000" />
       <workItem from="1694560296497" duration="2445000" />
       <workItem from="1695087246094" duration="4342000" />
-      <workItem from="1695128125521" duration="1995000" />
+      <workItem from="1695128125521" duration="4173000" />
     </task>
     <servers />
   </component>
