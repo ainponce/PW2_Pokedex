@@ -40,6 +40,42 @@ $usuario = $_SESSION["usuario"];
 <div class="container">
     <h2>Bienvenido, <?php echo $usuario; ?></h2>
     <p>Esta es tu página de inicio.</p>
+
+    <h3>Tus Pokémon:</h3>
+    <div class="row">
+        <?php
+        $conexion = new mysqli("localhost", "root", "", "pokedex");
+
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
+        }
+
+        $sql = "SELECT * FROM pokemon";
+        $result = $conexion->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-md-4 mb-4">';
+                echo '<div class="card text-center">';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row["imagen"]) . '" class="imagen-pokemon mx-auto" alt="' . $row["nombre"] . '">';
+                echo '<p class="card-text">Nro: ' . $row["id"] . '</p>';
+                echo '<p class="card-text">Altura: ' . $row["altura"] . ' cm</p>';
+                echo '<p class="card-text">Peso: ' . $row["peso"] . ' kg</p>';
+                echo '<p class="card-text">Tipo: ' . $row["tipo_id"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "No se encontraron Pokémon.";
+        }
+
+        // Cerrar la conexión
+        $conexion->close();
+        ?>
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
