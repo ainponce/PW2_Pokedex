@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74fe75b9-b3a9-46dd-b7b7-d95662c0fe1a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/agregarPokemon.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/agregarPokemon.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +85,8 @@
       <workItem from="1694560096173" duration="185000" />
       <workItem from="1694560296497" duration="2445000" />
       <workItem from="1695087246094" duration="4342000" />
-      <workItem from="1695128125521" duration="6510000" />
+      <workItem from="1695128125521" duration="7183000" />
+      <workItem from="1695167008142" duration="3429000" />
     </task>
     <servers />
   </component>

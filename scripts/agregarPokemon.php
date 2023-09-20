@@ -1,21 +1,41 @@
 <?php
 
-include("database.php");
+include ("database.php");
+
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $idPokemon = $_POST["id"];
-    $nombrePokemon = $_POST["nombrePokemon"];
-    $tipoPokemon = $_POST["tipoPokemon"];
+    $nombrePokemon = $_POST["nombre"];
+    $imagenPokemon = $_POST["imagen"];
+    $alturaPokemon = $_POST["altura"];
+    $pesoPokemon = $_POST["peso"];
+    $tipo_idPokemon = $_POST["tipo_id"];
+    $tipo2_idPokemon = $_POST["tipo2_id"];
 
-    $stmt =  $conexion->prepare("INSERT INTO `pokemons`(`id`,`nombre`,`imagen`,`altura`,`peso` ,`tipo`,`tipo2`) VALUES (?,?,?,?,?,?,?)");
-    $stmt->bind_param('iss', $idPokemon,$nombrePokemon,$tipoPokemon);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    $stmt->close();
+    $sql = "INSERT INTO pokemon (id, nombre, imagen, altura, peso, tipo_id, tipo2_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-    //http_response_code(201);
+    $stmt = $conexion->prepare($sql);
 
+    if ($stmt) {
+        $stmt->bind_param("isbddii", $idPokemon,$nombrePokemon, $imagenPokemon, $alturaPokemon, $pesoPokemon, $tipo_idPokemon, $tipo2_idPokemon);
+
+        if ($stmt->execute()) {
+            echo "Pokemon agregado correctamente.";
+        } else {
+            echo "Error al agregar el Pokemon: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "Error en la preparación de la consulta: " . $conexion->error;
+    }
+} else {
+    echo "Acceso no autorizado.";
 }
 
 $conexion->close();
+?>
+
