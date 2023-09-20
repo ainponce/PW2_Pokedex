@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pesoPokemon = $_POST["peso"];
     $tipo_idPokemon = $_POST["tipo_id"];
     $tipo2_idPokemon = $_POST["tipo2_id"];
-    var_dump($_FILES);
 
     $stmt = $conexion->prepare("SELECT * FROM tipo_pokemon WHERE nombre=? ");
         $stmt->bind_param("s", $tipo_idPokemon);
@@ -47,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("issddii", $idPokemon,$nombrePokemon, $contenidoImagen, $alturaPokemon, $pesoPokemon, $tipo_idPokemon, $tipo2_idPokemon);
 
         if ($stmt->execute()) {
-            echo "Pokemon agregado correctamente.";
+            header("Location: home.php");
+            exit;
         } else {
             echo "Error al agregar el Pokemon: " . $stmt->error;
         }

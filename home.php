@@ -166,7 +166,7 @@ $tipos = [
                     echo '</form>';
 
                     echo '<form class="m-1" method="post" action="./scripts/borrarPokemon.php">';
-                    echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
+                    echo '<input type="hidden" name="id" value="' . $row["id"] . '">';
                     echo '<button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>';
                     echo '</form>';
                     echo '</div>';
