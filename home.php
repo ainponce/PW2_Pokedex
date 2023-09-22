@@ -40,9 +40,10 @@ $usuario = $_SESSION["usuario"];
 
 <?php
 $tipos = [
-    "agua", "fuego", "planta", "acero", "volador", "hielo", "bicho",
-    "electrico", "normal", "roca", "tierra", "lucha", "hada", "psiquico",
-    "veneno", "dragon", "fantasma", "siniestro"
+    1 => "Agua", 2 => "Fuego", 3 => "Planta", 4 => "Acero", 5 => "Volador",
+    6 => "Hielo", 7 => "Bicho", 8 => "Electrico", 9 => "Normal", 10 => "Roca",
+    11 => "Tierra", 12 => "Lucha", 13 => "Hada", 14 => "Psiquico", 15 => "Veneno",
+    16 => "Dragon", 17 => "Fantasma", 18 => "Siniestro"
 ];
 ?>
 
@@ -123,6 +124,29 @@ $tipos = [
     <p>Esta es tu página de inicio.</p>
 
     <h3>Tus Pokémon:</h3>
+
+    <form class="form-inline mb-3" method="post" action="./scripts/procesarFiltro.php">
+        <h5>Filtrar por:</h5>
+        <div class="d-flex align-items-center">
+            <div class="form-group mb-2">
+                <select class="form-control" name="tipo" id="tipo">
+                    <option value="" disabled>Tipo...</option>
+                    <?php
+                    foreach ($tipos as $numeroReferencia => $tipo) {
+                        echo '<option value="' . $numeroReferencia . '">' . ucfirst($tipo) . '</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group mx-sm-2 mb-2">
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del Pokémon">
+            </div>
+            <div class="form-group mb-2">
+                <button type="submit" class="btn btn-primary ml-2">Filtrar</button>
+            </div>
+        </div>
+    </form>
+
     <div class="row">
         <?php
         $conexion = new mysqli("localhost", "root", "", "pokedex");
@@ -179,8 +203,6 @@ $tipos = [
         } else {
             echo "No se encontraron Pokémon.";
         }
-
-
         $conexion->close();
         ?>
 </div>

@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("issddii", $idPokemon,$nombrePokemon, $contenidoImagen, $alturaPokemon, $pesoPokemon, $tipo_idPokemon, $tipo2_idPokemon);
 
         if ($stmt->execute()) {
-            header("Location: home.php");
+            header("Location: ../home.php");
             exit;
         } else {
             echo "Error al agregar el Pokemon: " . $stmt->error;
