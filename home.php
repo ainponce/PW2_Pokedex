@@ -164,7 +164,7 @@ $tipos = [
         <h5>Filtrar por:</h5>
         <div class="d-flex align-items-center">
             <div class="form-group mb-2">
-                <select class="form-control" name="tipo" id="tipo">
+                <select class="form-select" name="tipo" id="tipo">
                     <option value="" disabled>Tipo...</option>
                     <?php
                     foreach ($tipos as $numeroReferencia => $tipo) {

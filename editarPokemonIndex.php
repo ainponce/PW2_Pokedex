@@ -6,7 +6,7 @@ if (!isset($_SESSION["usuario"])) {
 }
 
 
-$servername = "localhost:3336";
+$servername = "localhost";
 $username = "root";
 $password = '';
 $database = "pokedex";
@@ -32,7 +32,7 @@ $conn->close();
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <img src="./assets/pokdex-logo.png" class="pokelogo" href="home.php">
+        <img src="./assets/pokdex-logo.png" class="pokelogo" href="home.php" alt="logo">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php
@@ -49,50 +49,43 @@ $conn->close();
         </div>
     </div>
 </nav>
-</header>
-<main>
-    <form class="form-add-pokemon" action="./scripts/editarPokemon.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
-        <div>
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($resultado["imagen"]); ?>" class="imagen-pokemon mx-auto" alt="<?php echo $resultado["nombre"]; ?>">
-            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
-        </div>
-        <div>
-            <label for="nombrePokemon">Nombre:</label>
-            <?php
-            echo '<input type="text" id="nombrePokemon" name="nombrePokemon" value=" ' . $resultado['nombre'] . '">';
-            ?>
-        </div>
-        <div>
-            <label for="alturaPokemon">Altura:</label>
-            <?php
-            echo '<input type="text" id="alturaPokemon" name="alturaPokemon" value=" ' . $resultado['altura'] . '">';
-            ?>
-        </div>
-        <div>
-            <label for="pesoPokemon">Peso:</label>
-            <?php
-            echo '<input type="text" id="pesoPokemon" name="pesoPokemon" value=" ' . $resultado['peso'] . '">';
-            ?>
-        </div>
-        <!--
-        <div>
-            <label for="tipoPokemon">Tipo:</label>
-            <div>
-                <select style="width: 100%; height: 40px; border: none; border-radius: 6px; padding: 10px; font-size: 16px" id="tipoPokemon" name="tipoPokemon">
-                    <?php
-                    echo '<option id="tipoPokemon" name="tipoPokemon" value=" ' . $resultado['tipo_id'] . '">' . $resultado['tipo'] . '</option>';
-                    ?>
-                    <option id="tipoPokemon" name="tipoPokemon" value="Electrico">Electrico</option>
-                    <option id="tipoPokemon" name="tipoPokemon" value="Agua">Agua</option>
-                    <option id="tipoPokemon" name="tipoPokemon" value="Fuego">Fuego</option>
-                    <option id="tipoPokemon" name="tipoPokemon" value="Planta">Planta</option>
-                </select>
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-add-pokemon" action="./scripts/editarPokemon.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+                        <div class="text-center">
+                            <img src="data:image/jpeg;base64,<?php echo base64_encode($resultado["imagen"]); ?>" class="imagen-pokemon" alt="<?php echo $resultado["nombre"]; ?>">
+                            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombrePokemon" class="form-label">Nombre:</label>
+                            <?php
+                            echo '<input type="text" class="form-control" id="nombrePokemon" name="nombrePokemon" value="' . $resultado['nombre'] . '">';
+                            ?>
+                        </div>
+                        <div class="mb-3">
+                            <label for="alturaPokemon" class="form-label">Altura:</label>
+                            <?php
+                            echo '<input type="text" class="form-control" id="alturaPokemon" name="alturaPokemon" value="' . $resultado['altura'] . '">';
+                            ?>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pesoPokemon" class="form-label">Peso:</label>
+                            <?php
+                            echo '<input type="text" class="form-control" id="pesoPokemon" name="pesoPokemon" value="' . $resultado['peso'] . '">';
+                            ?>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-danger" href="../home.php"><i class="bi bi-arrow-left"></i> Volver</a>
+                            <button class="btn btn-primary" name="editButton" type="submit">Editar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            -->
         </div>
-        </div>
-        <button class="button-add-pokemon" name="editButton" type="submit">Editar</button>
-    </form>
+    </div>
 </main>
 </body>
 </html>

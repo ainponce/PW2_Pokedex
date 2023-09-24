@@ -6,7 +6,7 @@ if (!isset($_SESSION["usuario"])) {
     exit();
 }
 
-$servername = "localhost:3336";
+$servername = "localhost";
 $username = "root";
 $password = '';
 $database = "pokedex";
