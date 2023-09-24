@@ -12,15 +12,15 @@ $usuario = $_SESSION["usuario"];
 <html>
 <head>
     <title>¿Quien es este pokemon?</title>
-    <link rel="stylesheet" type="text/css" href="./style/style.css">
-    <link href="./assets/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link href="../assets/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <img src="PW2_Pokedex\assets\pokemon.webp" alt="">
+        <img src="../assets/pokdex-logo.png" class="pokelogo" alt="">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php
@@ -56,47 +56,49 @@ if (isset($_POST['nombre']) && !empty($_POST['nombre'])) {
 $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
-    echo '<div class="row">';
+    echo '<div class="container">';
+    echo '<a class="btn btn-danger" href="../home.php">Volver</a>';
+    echo '<div class="row row-cols-1 row-cols-md-3 g-4">';
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-md-4 mb-4">';
         echo '<div class="card text-center">';
         echo '<div class="card-body">';
-        
+
         // Encabezado con el nombre del Pokémon
         echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
-        
+
         // Imagen del Pokémon
         echo '<img src="data:image/jpeg;base64,' . base64_encode($row["imagen"]) . '" class="imagen-pokemon mx-auto" alt="' . $row["nombre"] . '">';
-        
+
         // Detalles del Pokémon
         echo '<div class="pokemon-details">';
-        
+
         // Información del Pokémon (Nro, Altura, Peso)
         echo '<div class="pokemon-info">';
         echo '<p class="card-text">Nro: ' . $row["id"] . '</p>';
         echo '<p class="card-text">Altura: ' . $row["altura"] . ' cm</p>';
         echo '<p class="card-text">Peso: ' . $row["peso"] . ' kg</p>';
         echo '</div>';
-        
+
         // Tipos del Pokémon
         echo '<div class="pokemon-info">';
         echo '<p class="card-text">Tipo:</p>';
-        
+
         if (!empty($row["tipo2_id"])) {
-            $tipo1_imagen = './assets/tipos/' . strtolower($row["tipo_id"]) . '.webp';
-            $tipo2_imagen = './assets/tipos/' . strtolower($row["tipo2_id"]) . '.webp';
+            $tipo1_imagen = '../assets/tipos/' . $row["tipo_id"] . '.webp';
+            $tipo2_imagen = '../assets/tipos/' . $row["tipo2_id"] . '.webp';
 
             echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
             echo '<img class="m-1 imagen-tipo" src="' . $tipo2_imagen . '" alt="' . $row["tipo2_id"] . '">';
         } else {
-            $tipo1_imagen = './assets/tipos/' . strtolower($row["tipo_id"]) . '.webp';
+            $tipo1_imagen = '../assets/tipos/' . $row["tipo_id"] . '.webp';
 
             echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
         }
         echo '</div>';
-        
+
         echo '</div>'; // Fin de pokemon-details
-        
+
         echo '</div>';
         echo '</div>';
         echo '</div>';
