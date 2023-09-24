@@ -7,7 +7,6 @@
     <list default="true" id="74fe75b9-b3a9-46dd-b7b7-d95662c0fe1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/procesarFiltro.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/procesarFiltro.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,7 @@
       <workItem from="1695221075812" duration="1434000" />
       <workItem from="1695341152636" duration="770000" />
       <workItem from="1695346119573" duration="4345000" />
-      <workItem from="1695579927869" duration="2578000" />
+      <workItem from="1695579927869" duration="3280000" />
     </task>
     <servers />
   </component>
