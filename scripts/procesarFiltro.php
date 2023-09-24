@@ -31,7 +31,7 @@ $usuario = $_SESSION["usuario"];
                 }
                 ?>
             </ul>
-            <form method="post" action="scripts/logOut.php">
+            <form method="post" action="./logOut.php">
                 <button class="btn btn-danger" type="submit">Cerrar Sesión</button>
             </form>
         </div>
@@ -57,7 +57,7 @@ $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     echo '<div class="container">';
-    echo '<a class="btn btn-danger" href="../home.php">Volver</a>';
+    echo '<a class="btn btn-danger m-2" href="../home.php">Volver</a>';
     echo '<div class="row row-cols-1 row-cols-md-3 g-4">';
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-md-4 mb-4">';
