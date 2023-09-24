@@ -100,6 +100,41 @@ $tipos = [
     </div>
 </div>
 
+<div class="modal fade" id="editarPokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Pokemon</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="scripts/agregarPokemon.php" enctype="multipart/form-data">
+                    <div class="mb-3" style="display: none">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="text" class="form-control" id="id" name="id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipo_id" class="form-label">Tipo</label>
+                        <select class="form-select" id="tipo_id" name="tipo_id" onchange="actualizarTipo2()">
+                            <option value="" disabled selected>Selecciona un tipo</option>
+                            <?php
+                            foreach ($tipos as $tipo) {
+                                echo '<option value="' . $tipo . '">' . ucfirst($tipo) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     function actualizarTipo2() {
         const tipo1 = document.getElementById('tipo_id').value;
@@ -184,9 +219,9 @@ $tipos = [
 
                 if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
                     echo '<div class="d-flex justify-content-center m-2">';
-                    echo '<form class="m-1" method="post" action="./scripts/editarPokemon.php">';
+                    echo '<form class="m-1" method="post" action="./editarPokemonIndex.php">';
                     echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
-                    echo '<button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i></button>';
+                    echo '<a class="btn btn-primary" type="button" href="./editarPokemonIndex.php?id=' . $row['id'] . '"><i class="bi bi-pencil"></i></a>';
                     echo '</form>';
 
                     echo '<form class="m-1" method="post" action="./scripts/borrarPokemon.php">';
