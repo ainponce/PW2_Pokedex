@@ -81,3 +81,43 @@
 .card{
     height: 5em;
 }
+
+/* Estilos para los detalles del Pokémon */
+.pokemon-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pokemon-details img.imagen-pokemon {
+    width: 150px; /* Tamaño de la imagen del Pokémon */
+    height: auto;
+    margin-right: 20px; /* Espacio entre la imagen y los detalles */
+}
+
+.pokemon-info {
+    flex: 1;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.pokemon-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.pokemon-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pokemon-info ul li {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.pokemon-info ul li img.imagen-tipo {
+    width: 1.5em; /* Tamaño de las imágenes de tipo */
+    height: auto;
+    margin-right: 5px; /* Espacio entre las imágenes de tipo */
+}
