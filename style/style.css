@@ -35,10 +35,6 @@
     display: block;
 }
 
-.nav-item{
-    text-decoration: underline;
-}
-
 .imagen-pokemon{
     width: 10em;
     height: auto;

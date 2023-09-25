@@ -21,7 +21,10 @@ $usuario = $_SESSION["usuario"];
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <img src="./assets/pokdex-logo.png" class="pokelogo" href="home.php">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php
                 if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
@@ -91,41 +94,6 @@ $tipos = [
                         <label for="tipo2_id" class="form-label">Tipo 2</label>
                         <select class="form-select" id="tipo2_id" name="tipo2_id">
                             <option value="" disabled selected>Selecciona un tipo</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Agregar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editarPokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar Pokemon</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="scripts/agregarPokemon.php" enctype="multipart/form-data">
-                    <div class="mb-3" style="display: none">
-                        <label for="id" class="form-label">ID</label>
-                        <input type="text" class="form-control" id="id" name="id">
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
-                    </div>
-                    <div class="mb-3">
-                        <label for="tipo_id" class="form-label">Tipo</label>
-                        <select class="form-select" id="tipo_id" name="tipo_id" onchange="actualizarTipo2()">
-                            <option value="" disabled selected>Selecciona un tipo</option>
-                            <?php
-                            foreach ($tipos as $tipo) {
-                                echo '<option value="' . $tipo . '">' . ucfirst($tipo) . '</option>';
-                            }
-                            ?>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar</button>
