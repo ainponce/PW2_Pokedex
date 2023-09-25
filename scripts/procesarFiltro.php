@@ -60,7 +60,7 @@ if ($result->num_rows > 0) {
     echo '<a class="btn btn-danger mt-2" href="../home.php"><i class="bi bi-arrow-left m-2"></i> Volver</a>';
     echo '<div class="row row-cols-1 row-cols-md-3 g-4 mt-1">';
     while ($row = $result->fetch_assoc()) {
-        echo '<div class="col-md-4 mb-4">';
+        echo '<div class="col-lg-4 col-md-12 col-sm-12 mb-4">';
         echo '<div class="card text-center">';
         echo '<div class="card-body">';
 

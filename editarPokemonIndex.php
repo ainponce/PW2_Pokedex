@@ -51,7 +51,7 @@ $conn->close();
 </nav>
 <main class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-4">
             <div class="card">
                 <div class="card-body">
                     <form class="form-add-pokemon" action="./scripts/editarPokemon.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">

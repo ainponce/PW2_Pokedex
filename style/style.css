@@ -26,8 +26,7 @@
     }
 }
 
-
-/* Home */
+/* HOME */
 
 .pokelogo{
     width: 5%;
@@ -53,6 +52,8 @@
 .card{
     height: 5em;
 }
+
+/* Estilos para el filtrado de pokemones */
 
 /* Estilos para los detalles del Pokémon */
 .pokemon-details {
@@ -89,7 +90,7 @@
 }
 
 .pokemon-info ul li img.imagen-tipo {
-    width: 1.5em; /* Tamaño de las imágenes de tipo */
+    width: 1.5em;
     height: auto;
-    margin-right: 5px; /* Espacio entre las imágenes de tipo */
+    margin-right: 5px;
 }

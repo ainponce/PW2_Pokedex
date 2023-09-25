@@ -195,7 +195,7 @@ $tipos = [
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo '<div class="col-md-4 mb-4">';
+                echo '<div class="col-lg-4 col-md-12 col-sm-12 mb-4">';
                 echo '<div class="card text-center">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
