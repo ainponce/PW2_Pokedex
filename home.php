@@ -69,7 +69,7 @@ $tipos = [
                         <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
                     </div>
                     <div class="mb-3">
-                        <label for="altura" class="form-label">Altura</label>
+                        <label for="altura" class="form-label">Altura (cm)</label>
                         <input type="text" class="form-control" id="altura" name="altura" pattern="[0-9]+(\.[0-9]+)?" required>
                     </div>
                     <div class="mb-3">

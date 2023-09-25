@@ -57,7 +57,7 @@ $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     echo '<div class="container">';
-    echo '<a class="btn btn-danger" href="../home.php"><i class="bi bi-arrow-left m-2"></i> Volver</a>';
+    echo '<a class="btn btn-danger mt-2" href="../home.php"><i class="bi bi-arrow-left m-2"></i> Volver</a>';
     echo '<div class="row row-cols-1 row-cols-md-3 g-4 mt-1">';
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-md-4 mb-4">';
@@ -96,10 +96,22 @@ if ($result->num_rows > 0) {
             echo '<img class="m-1 imagen-tipo" src="' . $tipo1_imagen . '" alt="' . $row["tipo_id"] . '">';
         }
         echo '</div>';
-
         echo '</div>'; // Fin de pokemon-details
 
         echo '</div>';
+        if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
+            echo '<div class="d-flex justify-content-center m-2">';
+            echo '<form class="m-1" method="post" action="./editarPokemon.php">';
+            echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
+            echo '<a class="btn btn-primary" type="button" href="../editarPokemonIndex.php?id=' . $row['id'] . '"><i class="bi bi-pencil"></i></a>';
+            echo '</form>';
+
+            echo '<form class="m-1" method="post" action="./borrarPokemon.php">';
+            echo '<input type="hidden" name="id" value="' . $row["id"] . '">';
+            echo '<button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>';
+            echo '</form>';
+            echo '</div>';
+        }
         echo '</div>';
         echo '</div>';
     }
@@ -107,8 +119,8 @@ if ($result->num_rows > 0) {
 } else {
     // No se encontraron Pokémon, mostrar mensaje de error
     echo '<div class="container">';
-    echo '<a class="btn btn-danger m-2" href="../home.php">Volver</a>';
-    echo '<div class="alert alert-danger" role="alert">Pokemon no encontrado.</div>';
+    echo '<a class="btn btn-danger mt-2" href="../home.php">Volver</a>';
+    echo '<div class="alert alert-danger mt-2" role="alert">Pokemon no encontrado.</div>';
     echo '<div class="row">';
 
         $sql = "SELECT * FROM pokemon";
@@ -140,12 +152,12 @@ if ($result->num_rows > 0) {
 
                 if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
                     echo '<div class="d-flex justify-content-center m-2">';
-                    echo '<form class="m-1" method="post" action="../scripts/editarPokemon.php">';
+                    echo '<form class="m-1" method="post" action="./editarPokemon.php">';
                     echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
-                    echo '<button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i></button>';
+                    echo '<a class="btn btn-primary" type="button" href="../editarPokemonIndex.php?id=' . $row['id'] . '"><i class="bi bi-pencil"></i></a>';
                     echo '</form>';
 
-                    echo '<form class="m-1" method="post" action="../scripts/borrarPokemon.php">';
+                    echo '<form class="m-1" method="post" action="./borrarPokemon.php">';
                     echo '<input type="hidden" name="id" value="' . $row["id"] . '">';
                     echo '<button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>';
                     echo '</form>';

@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        $sql = "UPDATE pokemon SET nombre = ?, peso = ?, imagen = ?, altura = ? WHERE id = ?";
+        $sql = "UPDATE pokemon SET nombre = ?, imagen = ?, altura = ?, peso = ?  WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssi", $nombre, $altura, $contenidoImagen, $peso, $id);
+        $stmt->bind_param("ssssi", $nombre,$contenidoImagen, $altura, $peso, $id);
     } else {
-        $sql = "UPDATE pokemon SET nombre = ?, peso = ?, altura = ? WHERE id = ?";
+        $sql = "UPDATE pokemon SET nombre = ?, altura = ?, peso = ?  WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sssi", $nombre, $altura, $peso, $id);
     }
