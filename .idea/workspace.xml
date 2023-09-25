@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74fe75b9-b3a9-46dd-b7b7-d95662c0fe1a" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/procesarFiltro.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/procesarFiltro.php" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/editarPokemonIndex.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pokedex.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/editarPokemon.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/editarPokemon.php" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
@@ -46,10 +58,9 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/PokedexWeb2-main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,6 +76,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\gordadex\PW2_Pokedex" />
       <recent name="C:\xampp\htdocs\scripts" />
     </key>
   </component>
@@ -88,8 +100,15 @@
       <workItem from="1695167008142" duration="3429000" />
       <workItem from="1695221075812" duration="1434000" />
       <workItem from="1695341152636" duration="770000" />
+<<<<<<< Updated upstream
       <workItem from="1695346119573" duration="4345000" />
       <workItem from="1695579927869" duration="3280000" />
+=======
+      <workItem from="1695346119573" duration="4083000" />
+      <workItem from="1695503478409" duration="1242000" />
+      <workItem from="1695518226285" duration="9624000" />
+      <workItem from="1695586478925" duration="1582000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

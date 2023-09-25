@@ -21,7 +21,10 @@ $usuario = $_SESSION["usuario"];
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <img src="./assets/pokdex-logo.png" class="pokelogo" href="home.php">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php
                 if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
@@ -69,7 +72,7 @@ $tipos = [
                         <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
                     </div>
                     <div class="mb-3">
-                        <label for="altura" class="form-label">Altura</label>
+                        <label for="altura" class="form-label">Altura (cm)</label>
                         <input type="text" class="form-control" id="altura" name="altura" pattern="[0-9]+(\.[0-9]+)?" required>
                     </div>
                     <div class="mb-3">
@@ -129,8 +132,8 @@ $tipos = [
         <h5>Filtrar por:</h5>
         <div class="d-flex align-items-center">
             <div class="form-group mb-2">
-                <select class="form-control" name="tipo" id="tipo">
-                    <option value="" disabled>Tipo...</option>
+                <select class="form-select" name="tipo" id="tipo">
+                    <option value="" >Seleccionar tipo</option>
                     <?php
                     foreach ($tipos as $numeroReferencia => $tipo) {
                         echo '<option value="' . $numeroReferencia . '">' . ucfirst($tipo) . '</option>';
@@ -149,7 +152,7 @@ $tipos = [
 
     <div class="row">
         <?php
-        $conexion = new mysqli("localhost", "root", "", "pokedex");
+        include("scripts/database.php");
 
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);
@@ -160,7 +163,7 @@ $tipos = [
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo '<div class="col-md-4 mb-4">';
+                echo '<div class="col-lg-4 col-md-12 col-sm-12 mb-4">';
                 echo '<div class="card text-center">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $row["nombre"] . '</h5>';
@@ -184,9 +187,9 @@ $tipos = [
 
                 if (isset($_SESSION['roleID']) && $_SESSION['roleID'] === 1) {
                     echo '<div class="d-flex justify-content-center m-2">';
-                    echo '<form class="m-1" method="post" action="./scripts/editarPokemon.php">';
+                    echo '<form class="m-1" method="post" action="./editarPokemonIndex.php">';
                     echo '<input type="hidden" name="pokemon_id" value="' . $row["id"] . '">';
-                    echo '<button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i></button>';
+                    echo '<a class="btn btn-primary" type="button" href="./editarPokemonIndex.php?id=' . $row['id'] . '"><i class="bi bi-pencil"></i></a>';
                     echo '</form>';
 
                     echo '<form class="m-1" method="post" action="./scripts/borrarPokemon.php">';
