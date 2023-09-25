@@ -5,18 +5,14 @@ if (!isset($_SESSION["usuario"])) {
     header("location: login.php");
 }
 
+include("scripts/database.php");
 
-$servername = "localhost";
-$username = "root";
-$password = '';
-$database = "pokedex";
 $id = $_GET['id'];
-$conn = new mysqli($servername, $username, $password, $database) or die();
 
 $sql = "SELECT * FROM pokemon WHERE id= $id";
-$result = $conn->query($sql);
+$result = $conexion->query($sql);
 $resultado = $result->fetch_assoc();
-$conn->close();
+$conexion->close();
 ?>
 
 
@@ -78,7 +74,7 @@ $conn->close();
                             ?>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-danger" href="../home.php"><i class="bi bi-arrow-left"></i> Volver</a>
+                            <a class="btn btn-danger" href="home.php"><i class="bi bi-arrow-left"></i> Volver</a>
                             <button class="btn btn-primary" name="editButton" type="submit">Editar</button>
                         </div>
                     </form>

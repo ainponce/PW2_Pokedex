@@ -133,7 +133,7 @@ $tipos = [
         <div class="d-flex align-items-center">
             <div class="form-group mb-2">
                 <select class="form-select" name="tipo" id="tipo">
-                    <option value="" disabled>Tipo...</option>
+                    <option value="" >Seleccionar tipo</option>
                     <?php
                     foreach ($tipos as $numeroReferencia => $tipo) {
                         echo '<option value="' . $numeroReferencia . '">' . ucfirst($tipo) . '</option>';
@@ -152,7 +152,7 @@ $tipos = [
 
     <div class="row">
         <?php
-        $conexion = new mysqli("localhost", "root", "", "pokedex");
+        include("scripts/database.php");
 
         if ($conexion->connect_error) {
             die("Error de conexión: " . $conexion->connect_error);

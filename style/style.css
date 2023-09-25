@@ -51,6 +51,10 @@
 
 /* Estilos para el filtrado de pokemones */
 
+.form-group {
+    padding: 5px;
+}
+
 /* Estilos para los detalles del Pokémon */
 .pokemon-details {
     display: flex;
